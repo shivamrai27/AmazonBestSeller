@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
+import './index.css'
 function BookList() {
     return (
-        <section>
+        <section className='booklist'>
             <Book />
             <Book />
             <Book />
@@ -15,7 +15,7 @@ function BookList() {
 
 const Book = () => {
     return (
-        <article>
+        <article className='book'>
             <Image />
             <Title />
             <Author />
@@ -23,11 +23,11 @@ const Book = () => {
     );
 };
 
-const Image = () => <img src="https://images-eu.ssl-images-amazon.com/images/I/91bYsX41DVL._AC_UL600_SR600,400_.jpg" />
+const Image = () => <img src="https://images-eu.ssl-images-amazon.com/images/I/814L+vq01mL._AC_UL600_SR600,400_.jpg" />
 const Title = () => {
-    return <h2>Atomic Habbit</h2>;
+    return <h2>Ikigai</h2>;
 };
-const Author = () => <h4>James Clear</h4>;
+const Author = () => <h4> Francesc Miralles </h4>;
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
