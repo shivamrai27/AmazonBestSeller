@@ -23,11 +23,11 @@ const Book = () => {
     );
 };
 
-const Image = () => <h2>image placeholder</h2>;
+const Image = () => <img src="https://images-eu.ssl-images-amazon.com/images/I/91bYsX41DVL._AC_UL600_SR600,400_.jpg" />
 const Title = () => {
-    return <h2>Book Title</h2>;
+    return <h2>Atomic Habbit</h2>;
 };
-const Author = () => <h4>Author</h4>;
+const Author = () => <h4>James Clear</h4>;
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
