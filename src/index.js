@@ -1,6 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css'
+
+const title = 'Ikigai'
+const author = 'Francesc Miralles'
+const img = "https://images-eu.ssl-images-amazon.com/images/I/814L+vq01mL._AC_UL600_SR600,400_.jpg"
+
 function BookList() {
     return (
         <section className='booklist'>
@@ -11,23 +16,15 @@ function BookList() {
         </section>
     );
 }
-
 const Book = () => {
     return (
         <article className='book'>
-            <Image />
-            <Title />
-            <Author />
+            <img src={img} />
+            <h2>{title}</h2>;
+            <h4>{author}</h4>;
         </article>
     );
 };
 
-const Image = () => <img src="https://images-eu.ssl-images-amazon.com/images/I/814L+vq01mL._AC_UL600_SR600,400_.jpg" />
-const Title = () => {
-    return <h2>Ikigai</h2>;
-};
-const Author = () => <h4> Francesc Miralles </h4>;
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
-
 root.render(<BookList />);
