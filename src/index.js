@@ -27,8 +27,12 @@ const fourtBook = {
 // const img = "https://images-eu.ssl-images-amazon.com/images/I/814L+vq01mL._AC_UL600_SR600,400_.jpg"
 
 function BookList() {
+
     return (
         <section className='booklist'>
+            <>
+                {EventExample()}
+            </>
             <Book
                 title={firstBook.title}
                 author={firstBook.author}
@@ -47,6 +51,31 @@ function BookList() {
                 title={fourtBook.title}
                 author={fourtBook.author}
                 img={fourtBook.img} />
+        </section>
+    );
+}
+
+const EventExample = () => {
+    let handleButtonClick = () => {
+
+        alert("Handle Button Click");
+    }
+    let handleFormInput = (e) => {
+
+        console.log(`Input Value : ${e.target.value}`);
+    }
+    return (
+        <section>
+            <form>
+                <h2>Typical Form</h2>
+                <input
+                    type="text"
+                    name='example'
+                    onChange={handleFormInput}
+                />
+
+            </form>
+            <button onClick={handleButtonClick}>Click Me</button>
         </section>
     );
 }
