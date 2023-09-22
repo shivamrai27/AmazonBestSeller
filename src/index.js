@@ -30,74 +30,25 @@ const books = [
 
 ]
 
-
-const fourtBook = {
-
-}
-// const title = 'Ikigai'
-// const author = 'Francesc Miralles'
-// const img = "https://images-eu.ssl-images-amazon.com/images/I/814L+vq01mL._AC_UL600_SR600,400_.jpg"
-
-function BookList() {
-
+const BookList = () => {
     return (
         <section className='booklist'>
-            <>
-                {EventExample()}
-            </>
-            <Book
-                title={firstBook.title}
-                author={firstBook.author}
-                img={firstBook.img}
-            />
-            <Book
-                title={secondBook.title}
-                author={secondBook.author}
-                img={secondBook.img}
-            />
-            <Book
-                title={thirdBook.title}
-                author={thirdBook.author}
-                img={thirdBook.img} />
-            <Book
-                title={fourtBook.title}
-                author={fourtBook.author}
-                img={fourtBook.img} />
+            {books.map((book) => {
+                return <Book {...book} key={book.id} />
+            })}
         </section>
     );
-}
+};
 
-const EventExample = () => {
-    let handleButtonClick = () => {
 
-        alert("Handle Button Click");
-    }
-    let handleFormInput = (e) => {
-
-        console.log(`Input Value : ${e.target.value}`);
-    }
-    return (
-        <section>
-            <form>
-                <h2>Typical Form</h2>
-                <input
-                    type="text"
-                    name='example'
-                    onChange={handleFormInput}
-                />
-
-            </form>
-            <button onClick={handleButtonClick}>Click Me</button>
-        </section>
-    );
-}
-const Book = ({ img, title, author }) => {
+const Book = (props) => {
+    const { img, title, author, } = props;
 
     return (
         <article className='book'>
-            <img src={img} />
-            <h2>{title}</h2>;
-            <h4>{author}</h4>;
+            <img src={img} alt={title} />
+            <h2>{title}</h2>
+            <h4>{author}</h4>
         </article>
     );
 };
